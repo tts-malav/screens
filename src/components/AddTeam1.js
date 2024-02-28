@@ -3,8 +3,8 @@ import React from 'react'
 const AddTeam = () => {
   return (
     <>
-        <h1 className="mt-8 font-bold border-b border-b-black">
-        Add Team Members
+        <h1 className="mt-6 font-bold border-b border-b-black">
+        Additional Team Member
         </h1>
         <div className="flex mt-4">
             <div className="flex flex-col w-[418px] mr-2">

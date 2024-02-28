@@ -9,6 +9,11 @@ const Form = () => {
 
     const [teamMembers, setTeamMembers] = useState([]);
     const [hasGST, setHasGST] = useState(true);
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleCheckboxChange = () => {
+        setIsChecked(!isChecked);
+    };
 
     const handleAdd = (e) => {
         e.preventDefault();
@@ -31,10 +36,10 @@ const Form = () => {
 
             <div className='flex justify-between w-full mt-6 font-medium'>
                 <div className='flex'>
-                    <p className='mr-2  w-[222px]'>My Buisness is GST Registered</p><input type='radio' name="gstno" value="true" onChange={() => setHasGST(true)} checked={hasGST === true} />
+                    <input type='radio' name="gstno" value="true" onChange={() => setHasGST(true)} checked={hasGST === true} /><p className='ml-2  w-[222px]'>My Buisness is GST Registered</p>
                 </div>
                 <div className='flex'>
-                    <p className='mr-2'>I do not have GST Number</p><input type='radio' name="gstno" value="false" onChange={() => setHasGST(false)} checked={hasGST === false} />
+                    <input type='radio' name="gstno" value="false" onChange={() => setHasGST(false)} checked={hasGST === false} /><p className='ml-2'>I do not have GST Number</p>
                 </div>
             </div>
 
@@ -82,10 +87,6 @@ const Form = () => {
                         className='h-[42px] rounded-[5px]'
                     />
                 </div>
-                <button onClick={(e)=>handleAdd(e)} className='flex mt-6 pl-1 font-semibold'>
-                    <PlusCircle className='rounded-full mr-2'/>
-                    <p>Add Additional Team Members</p>
-                </button>
 
                 {teamMembers.map((member, index) => (
                     <div className='flex flex-col' key={index}>
@@ -93,6 +94,19 @@ const Form = () => {
                         <button className='mt-4 self-end hover:bg-red-600' onClick={(e) => handleDelete(index, e)}><X /></button>
                     </div>
                 ))}
+
+                <button onClick={(e)=>handleAdd(e)} className='flex mt-4 font-semibold'>
+                    <PlusCircle className='rounded-full mr-2'/>
+                    <p>Add Additional Team Members</p>
+                </button>
+
+                
+                <div className='flex items-center justify-start pl-1 pt-4'>
+                <label className='flex items-center text-[12px] font-[400]'>
+                    <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange}/>
+                    <p className='pl-2'>I understand that this information will be publicly available and posted on the <b>Neevay Network</b></p>
+                </label>
+                </div>
             </div>
         </form>
     )

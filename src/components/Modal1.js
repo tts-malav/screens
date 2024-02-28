@@ -16,9 +16,9 @@ const Modal = ({onClose}) => {
   return (
     <div ref={modalRef} 
         //  onClick={closeModal} 
-         className='fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg flex justify-center items-center'>
-      <div className='px-4 py-2 flex flex-col bg-slate-400 max-h-[90vh] overflow-auto'>
-        <button onClick={onClose} className='place-self-end pt-2 hover:bg-red-700 '><X /></button>
+         className='fixed inset-0 bg-black bg-opacity-60 backdrop-blur-lg flex justify-center items-center'>
+      <div className='px-4 py-2 flex flex-col bg-neutral-400 max-h-[90vh] overflow-auto'>
+        <button onClick={onClose} className='place-self-end mt-2 hover:bg-red-700 '><X /></button>
         <Form />
       </div>
     </div>
