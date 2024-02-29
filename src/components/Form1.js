@@ -28,14 +28,14 @@ const Form = () => {
 
     return (
         <form  className='mt-2 px-4 flex flex-col items-center pb-6'>
-            <h1 className='font-[800] text-xl self-start w-[316px]'>Add Your Company Details</h1>
-            <p className='mt-3 w-[528px] font-medium self-start'> 
+            <h1 className='ml-[89px] font-[800] text-xl self-start w-[316px]'>Add Your Company Details</h1>
+            <p className='mt-3 ml-[89px] w-[528px] font-medium self-start'> 
                 We'll use this information to create your business page on the Neevay Network. 
                 You can always edit this information later.
             </p>
 
-            <div className='flex justify-between w-full mt-6 font-medium'>
-                <div className='flex'>
+            <div className=' pl-[90px] w-full flex mt-6 font-medium'>
+                <div className='flex mr-28'>
                     <input type='radio' name="gstno" value="true" onChange={() => setHasGST(true)} checked={hasGST === true} /><p className='ml-2  w-[222px]'>My Buisness is GST Registered</p>
                 </div>
                 <div className='flex'>
