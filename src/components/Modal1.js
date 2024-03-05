@@ -1,9 +1,10 @@
 import React, { useRef, useState } from 'react'
 import { X } from 'lucide-react';
 import Form from './Form1';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import ServiceAreas from './ServiceAreas';
 import AddProjects from './AddProjects';
+import AddProducts from './AddProducts';
 
 
 const Modal = ({onClose}) => {
@@ -11,13 +12,15 @@ const Modal = ({onClose}) => {
   const modalRef = useRef();
   const [page, setPage] = useState(0);
 
-  const handleNextClick = () => {
+  const handleNextClick = (e) => {
+    e.preventDefault();
     if(page < 3){
       setPage(page+1);
     }
   };
 
-  const handleBackClick = () => {
+  const handleBackClick = (e) => {
+    e.preventDefault();
     if(page){
       setPage(page-1);
     }
@@ -51,7 +54,7 @@ const Modal = ({onClose}) => {
       </nav>
       <div className='px-4 py-2 flex flex-col w-[949px] bg-[#D9D9D9] max-h-[424px] overflow-auto'>
         <button onClick={onClose} className='place-self-end mt-2 hover:bg-red-700 '><X /></button>
-        { page === 0 ? (<Form />) :  page === 1 ? (<AddProjects />) : page === 2 ? (<ServiceAreas />) : (<AddProjects />)} 
+        { page === 0 ? (<Form />) :  page === 1 ? (<AddProducts />) : page === 2 ? (<ServiceAreas />) : (<AddProjects />)} 
       </div>
       <div className='flex flex-col border-t border-t-slate-400 bg-[#D9D9D9] h-[103px] w-[949px] items-center'>
         <button className='font-bold mt-[18px] text-white w-[675px] h-[41px] bg-[#FD6600]'

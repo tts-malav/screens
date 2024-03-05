@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
 import { PlusCircle, X } from 'lucide-react';
-import AddTeam from './AddTeam1';
 import Projects from './Projects';
 
 const AddProjects = () => {
 
-  const [project, setProject] = useState(false)
   const [addProjects, setAddProjects] = useState([]);
-
-  const handleProject = (e) => {
-    e.preventDefault();
-    setProject(!project);
-  }
 
   const handleAdd = (e) => {
     e.preventDefault();
