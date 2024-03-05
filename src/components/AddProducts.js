@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import { PlusCircle, X } from 'lucide-react';
 import Products from './Products';
+import TypepPoduct from './TypepPoduct';
+import { TypeService } from './TypeService';
+import Spec1 from './Spec';
 
 const AddProducts = () => {
 
   const [addProducts, setAddProducts] = useState([]);
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleSelectChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
 
   const handleAdd = (e) => {
     e.preventDefault();
@@ -31,26 +39,37 @@ const AddProducts = () => {
                 />
             </div>
             <h1 className='mt-8 font-[700] border-b border-b-black'>Materials or Services Offered</h1>
-            
-            <div className='flex flex-col w-[418px] mr-2 mt-6'>
-                <label htmlFor='type' className='mb-1 pl-1 font-bold'>Type</label>
-                <input 
-                    className='h-[42px] w-[122px] font-bold pl-2 rounded-[5px]' placeholder='Select'
-                />
+            <div className='flex w-[675px] mt-6'>
+                <div className=' flex flex-col mr-4'>
+                    <label htmlFor='type' className='mb-1 pl-1 w-[122px] font-bold'>Type</label>
+                    <select 
+                        id='type' 
+                        className='h-[42px] w-[122px] font-bold pl-2 rounded-[5px]'
+                        value={selectedValue}
+                        onChange={handleSelectChange}
+                    >
+                        <option value='' disabled selected>Select</option>
+                        <option value='option1'>Product</option>
+                        <option value='option2'>Service</option>
+                    </select>
+                </div>
+                {selectedValue === 'option1' ? <TypepPoduct /> : selectedValue === 'option2' ? <TypeService /> : ""}
             </div>
+            {selectedValue === 'option1' ? <Spec1 /> : ""}
+            
         </div>
 
         {addProducts.map((member, index) => (
-            <div className='flex w-full justify-between' key={index}>
+            <div className='flex flex-col w-full ' key={index}>
                 {member}
-                    <button className=' self-end hover:bg-red-600' onClick={(e) => handleDelete(index, e)}><X /></button>
-                </div>
-                ))}
+                <button className=' self-end hover:bg-red-600' onClick={(e) => handleDelete(index, e)}><X /></button>
+            </div>
+        ))}
 
-            <button onClick={(e)=>handleAdd(e)} className='flex mt-6 font-semibold'>
-                <PlusCircle className='rounded-full mr-2'/>
-                <p>Add Another</p>
-            </button>
+        <button onClick={(e)=>handleAdd(e)} className='flex mt-6 font-semibold'>
+            <PlusCircle className='rounded-full mr-2'/>
+            <p>Add Another</p>
+        </button>
     </form>
   )
 }
