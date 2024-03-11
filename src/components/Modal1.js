@@ -30,7 +30,7 @@ const Modal = ({onClose}) => {
 
     return (
     <div ref={modalRef} 
-         className='fixed inset-0 bg-black bg-opacity-60 backdrop-blur-lg  flex flex-col justify-center items-center'>
+         className='fixed inset-0 bg-black bg-opacity-60 backdrop-blur-lg flex flex-col justify-center items-center'>
       <nav className='bg-[#000122] flex items-center justify-center w-[949px] h-[74px] text-white font-semibold'>
         <div className='flex items-center justify-center'>
             <img src={ page === 0 ? 'one.svg' : 'tick.svg'} className='h-8 mx-2' alt='' />
