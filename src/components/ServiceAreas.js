@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import AddState from './AddState';
+import AddCity from './AddCity';
 
-const ServiceAreas = () => {
+const ServiceAreas = (e) => {
 
   const [area, setArea] = useState();
 
@@ -21,6 +23,7 @@ const ServiceAreas = () => {
           <input type='radio' name="areas" value="c" onChange={() => setArea("c")} /><p className='ml-2'>Cities</p>
         </div>
       </div>
+      {area === "a" ? '' : area === "b" ? <AddState /> : area === "c" ? <AddCity /> : ""}
     </form>
   );
 };

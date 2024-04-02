@@ -48,13 +48,13 @@ const Form = () => {
                 <h1 className='mt-8 font-bold border-b border-b-black'>Other Information</h1>
                 <div className='flex mt-4'>
                     <div className='flex flex-col w-[448px] mr-3'>
-                        <label htmlFor='vtype' className='mb-1 pl-1 font-bold'>Vendor Type</label>
+                        <label htmlFor='vtype' className='mb-1 pl-1 font-bold'>Vendor Type<span className="text-red-500">*</span></label>
                         <input 
                             className='h-[42px] rounded-[5px]'
                         />
                     </div>
                     <div className='flex flex-col w-[214px]'>
-                        <label htmlFor='pno' className='mb-1 pl-1 font-bold'>Office Phone Number</label>
+                        <label htmlFor='pno' className='mb-1 pl-1 font-bold'>Office Phone Number<span className="text-red-500">*</span></label>
                         <input 
                             className='h-[42px] rounded-[5px]'
                         />

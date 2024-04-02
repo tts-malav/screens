@@ -10,7 +10,7 @@ const GstFetch = () => {
 
   return (
     <>
-    <label htmlFor='gstno' className='mt-8 mb-1 pl-1 font-bold'>GST Number:</label>
+    <label htmlFor='gstno' className='mt-8 mb-1 pl-1 font-bold'>GST Number<span className="text-red-500">*</span></label>
     <div className='flex'>
         <input 
             className='w-[528px] h-[42px] rounded-sm'
@@ -20,7 +20,7 @@ const GstFetch = () => {
     {fetch && (
       <div className='flex flex-col mt-2'>
         <div className='flex flex-col w-[675px]'>
-          <label htmlFor='line1' className='mb-1 mt-4 pl-1 font-bold'>Company Address Line 1</label>
+          <label htmlFor='line1' className='mb-1 mt-4 pl-1 font-bold'>Company Address Line 1<span className="text-red-500">*</span></label>
           <input 
             className='h-[112px] rounded-[5px]'
           />

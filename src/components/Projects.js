@@ -4,7 +4,7 @@ const Projects = () => {
   return (
     <>
     <div className='flex flex-col mt-12'>
-            <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Project Name</label>
+            <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Project Name<span className="text-red-500">*</span></label>
             <div className='flex justify-start'>
                 <input 
                     className='w-[487px] h-[42px] rounded-sm'
@@ -14,7 +14,7 @@ const Projects = () => {
         </div> 
         <div className='flex'>
             <div className='flex flex-col mt-6 mr-4'>
-                <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Client Name</label>
+                <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Client Name<span className="text-red-500">*</span></label>
                 <div className='flex justify-start'>
                     <input 
                         className='w-[292px] h-[42px] rounded-sm'
@@ -22,7 +22,7 @@ const Projects = () => {
                 </div>
             </div>   
             <div className='flex flex-col mt-6'>
-                <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Size of Project</label>
+                <label htmlFor='email' className='mb-1 pl-1 font-bold self-start'>Size of Project<span className="text-red-500">*</span></label>
                 <div className='flex justify-start'>
                     <input 
                         className='w-[179px] h-[42px] rounded-sm'
