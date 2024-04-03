@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { X } from 'lucide-react';
 import Form from './Form1';
-// import Navbar from './Navbar';
 import ServiceAreas from './ServiceAreas';
 import AddProjects from './AddProjects';
 import AddProducts from './AddProducts';
